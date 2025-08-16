@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden; /* Evita scroll horizontal */
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Garantir que todos os elementos tenham box-sizing border-box */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+}
+
+@layer components{
+    .nav-link{
+        @apply text-gray-800 group-hover:text-blue-600 transition-colors duration-300;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .nav-underline{
+        @apply bg-blue-600 h-1 w-0 mx-auto mt-1 transition-all duration-300 group-hover:w-full;
+    }
+
+    .hero-bg{
+        background-image: url('./img/background.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .hero-bg-2{
+        background-image: url('./img/hero-bg-2.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .bg-2{
+        background-image: url('./img/bg-2.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .bg-3{
+        background-image: url('./img/bg-3.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .bg-4{
+        background-image: url('./img/bg-4.webp');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .descricao{
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        margin-top: 16px;
+        line-height: 1.6;
+    }
+
+    .descricao-white{
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #FFF;
+        margin-top: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-underline{
+        @apply bg-white h-1 w-20 mx-auto mt-2 transition-all duration-500;
+    }
+
+    /* Media Queries para Responsividade Melhoradas */
+    
+    /* Mobile Extra Small (até 480px) */
+    @media (max-width: 480px) {
+        .descricao, .descricao-white {
+            font-size: 14px;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+    }
+    
+    /* Mobile Small (481px - 640px) */
+    @media (min-width: 481px) and (max-width: 640px) {
+        .descricao, .descricao-white {
+            font-size: 15px;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+    }
+    
+    /* Mobile Large (641px - 768px) */
+    @media (min-width: 641px) and (max-width: 768px) {
+        .descricao, .descricao-white {
+            font-size: 16px;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+    }
+    
+    /* Tablet (769px - 1023px) */
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .descricao, .descricao-white {
+            font-size: 18px;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+    }
+    
+    /* Desktop (1024px+) */
+    @media (min-width: 1024px) {
+        .descricao, .descricao-white {
+            font-size: 24px;
+            font-weight: 600; /* Mudança de bold para 600 para melhor legibilidade */
+            margin-top: 16px;
+            line-height: 1.4;
+        }
+    }
+    
+    /* Utility para prevenir overflow em seções */
+    .section-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Melhorias para imagens responsivas */
+    .responsive-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Fix para botões em mobile */
+    button {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    /* Garantir que logos não quebrem em mobile */
+    .logo-container {
+        max-width: 200px;
+        height: auto;
+    }
+}
